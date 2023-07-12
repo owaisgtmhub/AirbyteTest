@@ -21,4 +21,4 @@ SELECT
     _AIRBYTE_DATA:fields:comment:comments::ARRAY as comments,
     _AIRBYTE_DATA:fields:assignee:emailAddress::string as assignee
 FROM
-  athena_warehouse.jira._airbyte_raw_issues
+  jira._airbyte_raw_issues
