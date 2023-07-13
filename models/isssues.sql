@@ -10,6 +10,7 @@ SELECT
     _AIRBYTE_DATA:key::string as name,
     _AIRBYTE_DATA:self::string as url,
     _AIRBYTE_DATA:fields:summary::string as summary,
+    ARRAY_TO_STRING(REGEXP_EXTRACT_ALL(_airbyte_data:fields:description::string, '"text":"([^"]+)"', 1,1, 'e'), '\n') AS description,
     _AIRBYTE_DATA:fields:status:name::string as status,
     _AIRBYTE_DATA:fields:reporter:emailAddress::string as reporter,
     _AIRBYTE_DATA:fields:project:name::string as project_name,
